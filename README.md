@@ -6,7 +6,7 @@ This website is powered by Wix Headless and built using [wix-headless.dev](https
 
 ## Links
 
-- Live site: [https://wayfinder-4d3d233d-gonenj.wix-site-host.com](https://wayfinder-4d3d233d-gonenj.wix-site-host.com)
+- Live site: [https://wayfinderclub.club/](https://wayfinderclub.club/)
 - Source: [https://github.com/wix-incubator/wayfinderclub](https://github.com/wix-incubator/wayfinderclub)
 - Wix site ID: `fa2f4252-81e5-4f1d-a826-36a4935dcfa7`
 
