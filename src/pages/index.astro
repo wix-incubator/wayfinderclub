@@ -20,6 +20,11 @@ import TournamentRegistrationForm from "../components/TournamentRegistrationForm
           <a href="#registration" class="action-primary">Join a departure</a>
           <a href="#departures" class="action-secondary">Browse trips</a>
         </div>
+        <div class="hero-cues" aria-label="Expedition registration capabilities">
+          <span>Preference validation</span>
+          <span>Structured itinerary data</span>
+          <span>CRM-ready departure lists</span>
+        </div>
       </div>
 
       <div class="route-board" aria-label="Expedition route and capacity preview">
@@ -29,6 +34,11 @@ import TournamentRegistrationForm from "../components/TournamentRegistrationForm
           <span class="route-point point-three"></span>
           <span class="route-line line-one"></span>
           <span class="route-line line-two"></span>
+        </div>
+        <div class="route-tabs" aria-label="Route data points">
+          <span>Route fit</span>
+          <span>Capacity</span>
+          <span>Travel notes</span>
         </div>
         <div class="capacity-panel">
           <span>Patagonia Field Week</span>
@@ -69,6 +79,12 @@ import TournamentRegistrationForm from "../components/TournamentRegistrationForm
           <strong>Waitlist open</strong>
         </article>
       </div>
+      <div class="departure-flow" aria-label="Departure signup flow">
+        <span>Choose route</span>
+        <span>Validate contact</span>
+        <span>Confirm path</span>
+        <span>Prep trip CRM</span>
+      </div>
     </div>
   </section>
 
@@ -92,9 +108,33 @@ import TournamentRegistrationForm from "../components/TournamentRegistrationForm
             <dd>group capacity</dd>
           </div>
         </dl>
+        <div class="capability-stack" aria-label="Form capabilities">
+          <div>
+            <span>Validation</span>
+            <strong>Required traveler details and email format are checked before submit.</strong>
+          </div>
+          <div>
+            <span>Structured submission</span>
+            <strong>Route, pace, contact, and itinerary notes stay mapped to Wix fields.</strong>
+          </div>
+          <div>
+            <span>Success routing</span>
+            <strong>Submitted travelers move to a dedicated confirmation page.</strong>
+          </div>
+          <div>
+            <span>CRM-ready</span>
+            <strong>Trip teams can segment departure lists by interest, pace, and needs.</strong>
+          </div>
+        </div>
       </aside>
 
-      <TournamentRegistrationForm class="wayfinder-registration-form" />
+      <div class="registration-form-wrap">
+        <div class="form-status-strip">
+          <span>Wix Headless Forms</span>
+          <strong>Departure desk connected</strong>
+        </div>
+        <TournamentRegistrationForm class="wayfinder-registration-form" />
+      </div>
     </div>
   </section>
 </Layout>

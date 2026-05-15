@@ -24,6 +24,10 @@ body {
   margin: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .wayfinder-site {
   font-family: var(--font-family);
   color: var(--ink);
@@ -112,6 +116,7 @@ body {
 }
 
 .wayfinder-hero {
+  position: relative;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
   background:
@@ -120,7 +125,19 @@ body {
     #eef5f3;
 }
 
+.wayfinder-hero::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(120deg, transparent 0 58%, rgba(18, 97, 95, 0.12) 58% 58.2%, transparent 58.2% 100%),
+    linear-gradient(40deg, transparent 0 42%, rgba(238, 104, 74, 0.11) 42% 42.2%, transparent 42.2% 100%);
+}
+
 .hero-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.85fr);
   gap: clamp(2rem, 5vw, 5rem);
@@ -160,6 +177,28 @@ body {
   flex-wrap: wrap;
   gap: 0.85rem;
   margin-top: 2rem;
+}
+
+.hero-cues {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1.15rem;
+}
+
+.hero-cues span,
+.route-tabs span,
+.departure-flow span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.42rem 0.72rem;
+  border: 1px solid rgba(18, 97, 95, 0.22);
+  border-radius: 8px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.78);
+  font-size: 0.78rem;
+  font-weight: 850;
 }
 
 .action-primary,
@@ -222,10 +261,11 @@ body {
   position: relative;
   min-height: 23rem;
   background:
+    linear-gradient(135deg, transparent 0 42%, rgba(238, 104, 74, 0.12) 42% 42.8%, transparent 42.8% 100%),
     linear-gradient(90deg, rgba(16, 36, 35, 0.06) 1px, transparent 1px),
     linear-gradient(180deg, rgba(16, 36, 35, 0.06) 1px, transparent 1px),
     #dceae8;
-  background-size: 42px 42px, 42px 42px, auto;
+  background-size: auto, 42px 42px, 42px 42px, auto;
 }
 
 .route-point,
@@ -282,6 +322,22 @@ body {
   top: 37%;
   width: 32%;
   transform: rotate(-19deg);
+}
+
+.route-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  padding: 0.85rem;
+  border-top: 1px solid var(--line);
+  background: #f8fbfa;
+}
+
+.route-tabs span {
+  justify-content: center;
+  border-color: rgba(29, 120, 163, 0.2);
+  color: var(--secondary-color);
+  background: #ffffff;
 }
 
 .capacity-panel {
@@ -369,6 +425,20 @@ body {
   color: var(--primary-color);
 }
 
+.departure-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.departure-flow span {
+  justify-content: center;
+  min-height: 3rem;
+  border-color: rgba(238, 104, 74, 0.26);
+  background: rgba(238, 104, 74, 0.08);
+}
+
 .registration-section {
   background:
     linear-gradient(180deg, rgba(18, 97, 95, 0.1), transparent),
@@ -420,9 +490,66 @@ body {
   font-size: 0.82rem;
 }
 
+.capability-stack {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.capability-stack div {
+  padding: 0.95rem;
+  border: 1px solid rgba(18, 97, 95, 0.16);
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, rgba(18, 97, 95, 0.08), rgba(238, 104, 74, 0.06)),
+    #ffffff;
+}
+
+.capability-stack span,
+.form-status-strip span {
+  display: block;
+  color: var(--accent-color);
+  font-size: 0.74rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.capability-stack strong {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--ink);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.registration-form-wrap {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.form-status-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(18, 97, 95, 0.18);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 18px 45px rgba(23, 52, 49, 0.08);
+}
+
+.form-status-strip strong {
+  color: var(--ink);
+  font-size: 0.9rem;
+}
+
 .form-container {
   max-width: none;
   padding: clamp(1rem, 2.6vw, 1.5rem);
+  background:
+    linear-gradient(180deg, rgba(18, 97, 95, 0.07), transparent 26%),
+    #ffffff;
 }
 
 .form-section {
@@ -431,7 +558,9 @@ body {
   border: 1px solid var(--line);
   border-left: 5px solid var(--primary-color);
   border-radius: 8px;
-  background: #ffffff;
+  background:
+    linear-gradient(90deg, rgba(29, 120, 163, 0.055), transparent 36%),
+    #ffffff;
 }
 
 .form-section-secondary {
@@ -447,6 +576,13 @@ body {
 }
 
 .form-section-header span {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid rgba(238, 104, 74, 0.24);
+  border-radius: 8px;
+  background: rgba(238, 104, 74, 0.08);
   color: var(--accent-color);
   font-size: 0.78rem;
   font-weight: 900;
@@ -634,6 +770,10 @@ body {
   .registration-copy {
     position: static;
   }
+
+  .departure-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 560px) {
@@ -646,7 +786,16 @@ body {
     min-height: 17rem;
   }
 
+  .hero-copy h1 {
+    font-size: 3.45rem;
+  }
+
   .trip-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .route-tabs,
+  .departure-flow {
     grid-template-columns: 1fr;
   }
 
@@ -658,5 +807,44 @@ body {
   .form-actions .site-button,
   .hero-actions a {
     width: 100%;
+  }
+
+  .form-status-strip {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .route-point {
+    animation: routeBeacon 3.6s ease-in-out infinite;
+  }
+
+  .point-two {
+    animation-delay: 320ms;
+  }
+
+  .point-three {
+    animation-delay: 640ms;
+  }
+
+  .departure-grid article {
+    transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+
+  .departure-grid article:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 20px 45px rgba(23, 52, 49, 0.14);
+  }
+}
+
+@keyframes routeBeacon {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
   }
 }
