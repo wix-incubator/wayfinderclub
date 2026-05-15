@@ -3,15 +3,98 @@ import Layout from "../layouts/Layout.astro";
 import TournamentRegistrationForm from "../components/TournamentRegistrationForm.astro";
 ---
 
-<Layout title="Soccer Tournament Registration">
-  <div class="max-w-4xl mx-auto">
-    <div class="mb-8 text-center">
-      <h1 class="text-3xl font-medium mb-3 text-[#20455E]">Soccer Tournament Registration</h1>
-      <p class="text-gray-500 max-w-xl mx-auto text-sm">
-        Fill out the form below to register your team for the upcoming soccer tournament.
-      </p>
+<Layout
+  title="Wayfinder Club Expedition Registration"
+  description="Discover curated travel experiences and register for Wayfinder Club expeditions with Wix Headless."
+>
+  <section class="wayfinder-hero">
+    <div class="site-shell hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Small-group departures - trails, cities, coastlines</p>
+        <h1>Wayfinder Club</h1>
+        <p class="hero-lede">
+          Discover limited-capacity travel experiences, choose an itinerary
+          lane, and register your group before the next departure fills.
+        </p>
+        <div class="hero-actions" aria-label="Wayfinder actions">
+          <a href="#registration" class="action-primary">Join a departure</a>
+          <a href="#departures" class="action-secondary">Browse trips</a>
+        </div>
+      </div>
+
+      <div class="route-board" aria-label="Expedition route and capacity preview">
+        <div class="route-map">
+          <span class="route-point point-one"></span>
+          <span class="route-point point-two"></span>
+          <span class="route-point point-three"></span>
+          <span class="route-line line-one"></span>
+          <span class="route-line line-two"></span>
+        </div>
+        <div class="capacity-panel">
+          <span>Patagonia Field Week</span>
+          <strong>6 seats left</strong>
+          <p>
+            Wix Headless keeps discovery pages custom while attendee details,
+            itinerary preferences, and capacity signals flow into Wix-powered
+            registration records.
+          </p>
+        </div>
+      </div>
     </div>
-    
-    <TournamentRegistrationForm />
-  </div>
+  </section>
+
+  <section id="departures" class="departures-section">
+    <div class="site-shell">
+      <div class="section-heading">
+        <p class="eyebrow">Featured departures</p>
+        <h2>Itinerary discovery and signup in the same polished flow.</h2>
+      </div>
+      <div class="departure-grid">
+        <article>
+          <span>01</span>
+          <h3>Alpine Maker Week</h3>
+          <p>Five days of guided hikes, field notes, and evening studio sessions.</p>
+          <strong>12 travelers max</strong>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Lisbon Design Walks</h3>
+          <p>Neighborhood routes, local hosts, and architecture-focused group time.</p>
+          <strong>8 seats left</strong>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Pacific Edge Retreat</h3>
+          <p>Coastal exploration, maker dinners, and calm morning route planning.</p>
+          <strong>Waitlist open</strong>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="registration" class="registration-section">
+    <div class="site-shell registration-grid">
+      <aside class="registration-copy">
+        <p class="eyebrow">Registration</p>
+        <h2>Tell us where you want the map to open.</h2>
+        <p>
+          Wayfinder Club can market trips like a custom editorial experience
+          while Wix Headless handles attendee registration, field validation,
+          and the next-step success route.
+        </p>
+        <dl class="trip-stats" aria-label="Registration capabilities">
+          <div>
+            <dt>Live</dt>
+            <dd>itinerary interest</dd>
+          </div>
+          <div>
+            <dt>Small</dt>
+            <dd>group capacity</dd>
+          </div>
+        </dl>
+      </aside>
+
+      <TournamentRegistrationForm class="wayfinder-registration-form" />
+    </div>
+  </section>
 </Layout>
